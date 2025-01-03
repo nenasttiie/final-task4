@@ -1,0 +1,645 @@
+.toggle-button {
+    -fx-text-fill: #F8F9FA;
+    -fx-background-color: #212529;
+    -fx-padding: 0px 0px;
+    -fx-alignment: center;
+    -fx-font-size: 14px;
+    -fx-border-color: #F8F9FA;
+    -fx-border-width: 0.5px;
+}
+
+.menu-bar {
+    -fx-background-color: #212529;
+    -fx-border-color: transparent;
+}
+
+.menu {
+    -fx-background-color: #262b2f;
+    -fx-text-fill: #F8F9FA;
+    -fx-font-size: 14px;
+}
+
+.menu:hover {
+    -fx-background-color: #262b2f;
+}
+
+.menu-item {
+    -fx-background-color: #212529;
+    -fx-text-fill: #F8F9FA;
+    -fx-font-size: 14px;
+}
+
+.menu-item:hover {
+    -fx-background-color: #262b2f;
+    -fx-text-fill: #F8F9FA;
+}
+
+.menu-item:focused {
+    -fx-background-color: #262b2f;
+    -fx-text-fill: #F8F9FA;
+}
+
+.toggle-button:selected {
+    -fx-border-color: #F8F9FA;
+    -fx-text-fill: #212529;
+    -fx-background-color: #eb5e28;
+}
+
+.toggle-button:hover {
+      -fx-background-color: #262b2f;
+}
+.label {
+    -fx-text-fill: #F8F9FA;
+    -fx-font-size: 14px;
+}
+
+.toggle-button:pressed {
+    -fx-background-color: #eb5e28;
+    -fx-text-fill: #F8F9FA;
+}
+
+.list-view {
+    -fx-background-color: #212529;
+    -fx-text-fill: #F8F9FA;
+    -fx-font-size: 14px;
+}
+
+.list-view .list-cell {
+    -fx-text-fill: #F8F9FA;
+    -fx-background-color: #212529;
+}
+
+.list-view .list-cell:selected {
+    -fx-background-color: #eb5e28;
+    -fx-text-fill: #212529;
+}
+
+.list-view .list-cell:hover {
+  -fx-background-color: #262b2f;
+}
+
+
+.slider {
+    -fx-background-color: transparent;
+    -fx-control-inner-background: transparent;
+}
+
+.slider .thumb {
+    -fx-background-color: #F8F9FA;
+}
+
+.slider .track {
+    -fx-background-color: #d3d3d3;
+}
+
+.slider:pressed {
+    -fx-text-fill: #F8F9FA;
+}
+
+.slider:focused {
+    -fx-text-fill: #F8F9FA;
+}
+
+.vbox {
+    -fx-background-color: #212529;
+    -fx-spacing: 3;
+}
+
+.hbox {
+    -fx-background-color: #f0f0f0;
+    -fx-spacing: 3;
+    -fx-alignment: center-left;
+}
+
+.hbox > * {
+    -fx-margin: 2px;
+}
+
+.button {
+    -fx-background-color: #212529;
+    -fx-text-fill: #F8F9FA;
+    -fx-border-width: 0;
+}
+
+.hbox .buttonBox {
+    -fx-hgap: 3px;
+    -fx-alignment: center-right;
+    -fx-hgrow: always;
+}
+
+.scroll-pane {
+    -fx-margin: 3px;
+    -fx-background: #212529;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane .scroll-bar {
+    -fx-background-color: #f0f0f0;
+}
+
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: #F8F9FA;
+    -fx-background-radius: 4;
+}
+
+.scroll-pane .scroll-bar .increment-button,
+.scroll-pane .scroll-bar .decrement-button {
+    -fx-background-radius: 0;
+    -fx-padding: 0;
+}
+
+.scroll-pane .scroll-bar:vertical {
+    -fx-pref-width: 8;
+}
+
+.scroll-pane .scroll-bar:horizontal {
+    -fx-pref-height: 8;
+}
+
+.error-window {
+    -fx-background-color: #212529;
+    -fx-border-color: #495057;
+}
+
+.error-textarea {
+    -fx-background-color: #212529;
+    -fx-text-fill: #F8F9FA;
+    -fx-font-size: 14px;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-control-inner-background: #212529;
+    -fx-border-color: #212529;
+    -fx-overflow: transparent;
+    -fx-resize: transparent;
+}
+
+.error-text {
+    -fx-fill: #F8F9FA;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.error-textarea:focused {
+    -fx-text-fill: #F8F9FA;
+}
+
+.close-button {
+    -fx-background-color: #212529;
+    -fx-text-fill: #F8F9FA;
+    -fx-font-size: 16px;
+    -fx-padding: 5px 15px;
+}
+
+.close-button:hover {
+    -fx-background-color: #262b2f;
+    -fx-text-fill: #212529;
+}
+
+.color-picker {
+    -fx-background-color: #212529;
+    -fx-font-size: 12px;
+}
+
+.combo-box {
+    -fx-text-fill: #F8F9FA;
+    -fx-background-color: #212529;
+    -fx-font-size: 14px;
+}
+
+.titled-pane {
+    -fx-background-color: #212529;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+.titled-pane .title {
+    -fx-text-fill: #F8F9FA;
+    -fx-background-color: #ffffff;
+    -fx-border-color: transparent;
+    -fx-font-size: 14px;
+    -fx-padding: 5px 10px;
+}
+
+
+
+.titled-pane .content {
+    -fx-background-color: #212529;
+    -fx-border-color: transparent;
+    -fx-padding: 5px;
+}
+
+.titled-pane:focused {
+    -fx-focus-color: #eb5e28;
+}
+
+#camerasTitledPane .title {
+    -fx-text-fill: #F8F9FA;
+    -fx-background-color: #495057;
+    -fx-border-color: transparent;
+    -fx-font-size: 16px;
+    -fx-padding: 5px 10px;
+}
+
+
+#camerasTitledPane .content {
+    -fx-background-color: #212529;
+    -fx-padding: 10px;
+}
+
+.titled-pane:focused {
+    -fx-focus-color: #eb5e28;
+}
+
+#cameraCoordinatesVBox11 {
+    -fx-background-color: #212529;
+    -fx-padding: 10px;
+    -fx-spacing: 10px;
+}
+
+#cameraCoordinatesVBox11 .title {
+    -fx-text-fill: #F8F9FA;
+    -fx-background-color: #495057;
+    -fx-font-size: 16px;
+}
+
+
+#cameraCoordinatesVBox11 .content {
+    -fx-background-color: #212529;
+    -fx-padding: 5px;
+}
+
+.titled-pane .title .arrow {
+    -fx-background-color: #F8F9FA;
+}
+
+
+.titled-pane:focused {
+    -fx-focus-color: #eb5e28;
+}
+
+#sidePanel > VBox Text {
+    -fx-fill: #F8F9FA;
+    -fx-font-size: 20.0;
+}
+
+#sidePanel > VBox HBox Text {
+    -fx-fill: #F8F9FA;
+    -fx-font-size: 14.0;
+}
+
+#sidePanel > VBox HBox TextField {
+    -fx-background-color: #495057;
+    -fx-text-fill: #F8F9FA;
+}
+
+#sidePanel > VBox Button {
+    -fx-background-color: #212529;
+    -fx-border-width: 0;
+    -fx-text-fill: #F8F9FA;
+    -fx-font-size: 18.0;
+    -fx-underline: true;
+}
+
+#sidePanel > VBox RadioButton {
+    -fx-text-fill: #F8F9FA;
+    -fx-background-color: transparent;
+    -fx-font-size: 14px;
+    -fx-padding: 0;
+    -fx-alignment: center-left;
+    -fx-focus-color: transparent;
+    -fx-border-width: 0;
+    -fx-margin: 0;
+}
+
+#sidePanel > VBox HBox {
+    -fx-background-color: #212529;
+    -fx-spacing: 3;
+}
+
+/* General Styles */
+.root, .anchor-pane, .pane, .vbox, .hbox {
+    -fx-background-color: #212529;
+}
+
+.anchor-pane, .pane, .vbox, .hbox {
+    -fx-background-color: #212529;
+}
+
+.titled-pane .title .arrow {
+    -fx-background-color: #eb5e28;
+}
+
+
+.titled-pane:focused {
+    -fx-focus-color: #eb5e28;
+}
+
+.text-field {
+    -fx-background-color: #495057;
+    -fx-text-fill: #F8F9FA;
+}
+
+.list-view {
+    -fx-background-color: #212529;
+    -fx-text-fill: #F8F9FA;
+    -fx-margin: 10px;
+}
+
+#Models .list-view {
+    -fx-background-color: #212529;
+    -fx-text-fill: #F8F9FA;
+    -fx-margin: 10px;
+}
+
+.list-view .list-cell {
+    -fx-text-fill: #F8F9FA;
+    -fx-background-color: #212529;
+}
+
+.list-view .list-cell:selected {
+    -fx-background-color: #eb5e28;
+    -fx-text-fill: #212529;
+}
+
+
+#bottomPane {
+    -fx-background-color: #212529;
+    -fx-border-color: #f0f0f0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 5);
+}
+
+#sidePanel {
+    -fx-background-color: #212529;
+}
+
+#deleteButton{
+    -fx-padding: 0;
+}
+
+#toggleVertices {
+    -fx-padding: 0;
+}
+
+#sidePanel > VBox {
+    -fx-background-color: #212529;
+    -fx-padding: 3;
+    -fx-spacing: 3;
+}
+
+#sidePanel > VBox Text {
+    -fx-fill: #F8F9FA;
+    -fx-font-size: 20.0;
+}
+
+
+.toggle-switch {
+    -fx-background-color: #212529;
+    -fx-border-color: #495057;
+    -fx-border-width: 2px;
+}
+
+.toggle-switch .thumb {
+    -fx-background-color: #F8F9FA;
+}
+
+.toggle-switch:selected {
+    -fx-background-color: #eb5e28;
+    -fx-thumb: #212529;
+}
+
+.tab-pane {
+    -fx-background-color: #212529;
+    -fx-border-color: #F8F9FA;
+}
+
+.tab-pane .tab-header-area {
+    -fx-background-color: #f0f0f0;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #212529;
+    -fx-text-fill: #F8F9FA;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #eb5e28;
+    -fx-text-fill: #212529;
+}
+
+.root {
+    -fx-background-color: #212529;
+}
+
+.anchor-pane, .pane, .vbox, .hbox {
+    -fx-background-color: #212529;
+}
+
+.button {
+    -fx-background-color: #212529;
+    -fx-text-fill: #F8F9FA;
+    -fx-font-size: 14px;
+    -fx-border-color: #F8F9FA;
+    -fx-border-width: 0.5px;
+}
+
+.button:hover {
+      -fx-background-color: #262b2f;
+}
+
+.titled-pane .title .arrow {
+    -fx-background-color: #eb5e28;
+}
+
+
+
+.titled-pane:focused {
+    -fx-focus-color: #eb5e28;
+}
+
+.text-field {
+    -fx-background-color: #495057;
+    -fx-text-fill: #F8F9FA;
+}
+
+.list-view {
+    -fx-background-color: #212529;
+    -fx-text-fill: #F8F9FA;
+    -fx-margin: 10px;
+}
+
+#Models .list-view {
+    -fx-background-color: #212529;
+    -fx-text-fill: #F8F9FA;
+    -fx-margin: 10px;
+}
+
+.list-view .list-cell {
+    -fx-text-fill: #F8F9FA;
+    -fx-background-color: #212529;
+}
+
+.list-view .list-cell:selected {
+    -fx-background-color: #eb5e28;
+    -fx-text-fill: #212529;
+}
+
+
+
+#myStackPane {
+    -fx-background-color: #f0f0f0;
+}
+
+
+#bottomPane {
+    -fx-background-color: #212529;
+    -fx-border-color: #f0f0f0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 5);
+}
+
+#sidePanel {
+    -fx-background-color: #212529;
+}
+
+#toggleVertices {
+    -fx-padding: 0;
+}
+#deleteButton{
+    -fx-padding: 0;
+}
+
+#sidePanel > VBox {
+    -fx-background-color: #212529;\
+    -fx-border-color: white;
+    -fx-border-width: 1px;
+    -fx-padding: 3;
+    -fx-spacing: 3;
+}
+
+#sidePanel > VBox Text {
+    -fx-fill: #F8F9FA;
+    -fx-font-size: 20.0;
+}
+
+#sidePanel > VBox HBox Text {
+    -fx-fill: #000000;
+    -fx-font-size: 12.0;
+}
+
+#sidePanel > VBox HBox TextField {
+    -fx-background-color: #495057;
+    -fx-text-fill: #F8F9FA;
+}
+
+#sidePanel > VBox Button {
+    -fx-background-color: #212529;
+    -fx-border-width: 0;
+    -fx-text-fill: #F8F9FA;
+    -fx-font-size: 18.0;
+    -fx-underline: true;
+}
+
+#sidePanel > VBox RadioButton {
+    -fx-text-fill: #F8F9FA;
+    -fx-background-color: transparent;
+    -fx-font-size: 14px;
+    -fx-padding: 0;
+    -fx-alignment: center-left;
+    -fx-focus-color: transparent;
+    -fx-border-width: 0;
+    -fx-margin: 0;
+}
+
+#sidePanel > VBox #colorPicker {
+    -fx-pref-height: 26.0;
+    -fx-pref-width: 188.0;
+}
+
+#sidePanel > VBox #textureComboBox {
+    -fx-pref-height: 30.0;
+    -fx-pref-width: 187.0;
+}
+
+#sidePanel > VBox HBox {
+    -fx-background-color: #212529;
+    -fx-spacing: 3;
+}
+
+#camerasTitledPane {
+    -fx-background-color: #212529;
+    -fx-text-fill: #F8F9FA;
+}
+
+#camerasTitledPane .title {
+    -fx-text-fill: #F8F9FA;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-size: 19px;
+    -fx-padding: 5px 10px;
+}
+
+#camerasTitledPane .title .arrow {
+    -fx-background-color: #F8F9FA;
+}
+
+
+
+#camerasTitledPane .content {
+    -fx-background-color: #212529;
+    -fx-padding: 10px;
+}
+
+#cameraCoordinatesVBox11 {
+    -fx-background-color: #212529;
+    -fx-padding: 10px;
+    -fx-spacing: 10px;
+}
+
+#cameraCoordinatesVBox11 .button {
+    -fx-background-color: #212529;
+    -fx-text-fill: #F8F9FA;
+    -fx-font-size: 18px;
+    -fx-underline: true;
+    -fx-padding: 10px;
+}
+
+#cameraCoordinatesVBox11 .text-field {
+    -fx-background-color: #495057;
+    -fx-text-fill: #F8F9FA;
+    -fx-font-size: 14px;
+}
+
+#cameraCoordinatesVBox11 .list-view {
+    -fx-background-color: #212529;
+    -fx-text-fill: #F8F9FA;
+    -fx-font-size: 14px;
+}
+
+#cameraCoordinatesVBox11 .list-view .list-cell {
+    -fx-text-fill: #F8F9FA;
+    -fx-background-color: #212529;
+}
+
+#cameraCoordinatesVBox11 .list-view .list-cell:selected {
+    -fx-background-color: #eb5e28;
+    -fx-text-fill: #212529;
+}
+
+#cameraCoordinatesVBox11 .button {
+    -fx-background-color: #212529;
+    -fx-text-fill: #F8F9FA;
+    -fx-border-width: 0;
+    -fx-font-size: 18px;
+    -fx-underline: true;
+}
+
+#cameraCoordinatesVBox11 HBox {
+    -fx-spacing: 10px;
+    -fx-background-color: #212529;
+    -fx-alignment: center;
+}
+
+#bottomPane {
+    -fx-background-color: #212529;
+    -fx-border-color: #f0f0f0;
+}
+

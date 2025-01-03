@@ -1,0 +1,11 @@
+.VBox {
+    -fx-background-color: #403D39;
+    -fx-spacing: 10;
+    -fx-alignment: center-left;
+}
+
+.HBox {
+    -fx-background-color: #403D39;
+    -fx-spacing: 10;
+    -fx-alignment: center-left;
+}

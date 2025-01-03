@@ -1,0 +1,16 @@
+.list-view {
+  -fx-background-color: #403D39;
+  -fx-text-fill: #fffcf2;
+  -fx-font-size: 14px;
+}
+.list-view .list-cell {
+  -fx-text-fill: #fffcf2;
+  -fx-padding: 3px;
+  -fx-background-color: #403D39;
+}
+.list-view .list-cell:hover {
+  -fx-background-color: #302e2b;
+}
+.list-view .list-cell:selected {
+  -fx-background-color: #eb5e28;
+}

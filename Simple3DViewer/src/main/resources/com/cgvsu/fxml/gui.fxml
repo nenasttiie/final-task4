@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefWidth="1600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cgvsu.GuiController">
+   <children>
+      <HBox fx:id="HBoxCanvas" maxWidth="956.0" prefHeight="940.0" prefWidth="873.0">
+         <children>
+      
+                                                             <Canvas fx:id="canvas" height="863.0" onMouseClicked="#mous1" width="956.0" />
+         </children>
+      </HBox>
+      <StackPane>
+         <children>
+            <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="940.0" prefWidth="1586.0">
+               <top>
+                  <Pane fx:id="topMenuPane" prefHeight="40.0" prefWidth="1162.0" style="-fx-background-color: #252422;" BorderPane.alignment="CENTER">
+                     <children>
+                        <MenuBar prefHeight="40.0" prefWidth="1600.0">
+                          <menus>
+                            <Menu mnemonicParsing="false" text="File">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" onAction="#addModelButton" text="Load Model" />
+                                    <MenuItem mnemonicParsing="false" onAction="#onSaveModelMenuItemClick" text="Save model" />
+                                    <MenuItem mnemonicParsing="false" onAction="#addTexture" text="Load texture" />
+                                 </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Theme">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" onAction="#switchToDarkTheme" text="Dark Theme" />
+                                    <MenuItem mnemonicParsing="false" onAction="#switchToLightTheme" text="Light Theme" />
+                                 </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="View">
+                              <items>
+                                <MenuItem mnemonicParsing="false" onAction="#addWindow" text="Two windows" />
+                                    <MenuItem mnemonicParsing="false" onAction="#oneWindow" text="One window" />
+                              </items>
+                            </Menu>
+                          </menus>
+                        </MenuBar>
+                     </children>
+                  </Pane>
+               </top>
+               <right>
+                  <ScrollPane prefHeight="900.0" prefWidth="310.0" BorderPane.alignment="CENTER">
+                     <content>
+                        <VBox prefHeight="1600.0" prefWidth="295.0">
+                           <children>
+                              <TitledPane fx:id="Models" animated="false" prefHeight="259.0" prefWidth="295.0" text="Models">
+                                <content>
+                                  <AnchorPane maxWidth="295.0" minHeight="0.0" minWidth="0.0" prefHeight="235.0" prefWidth="293.0">
+                                       <children>
+                                          <VBox maxWidth="280.0" prefHeight="158.0" prefWidth="280.0">
+                                             <children>
+                                                <HBox maxWidth="280.0" prefHeight="63.0" prefWidth="280.0">
+                                                   <children>
+                                                      <Button fx:id="buttonAddModel" mnemonicParsing="false" onAction="#addModelButton" prefHeight="31.0" prefWidth="120.0" text="Add model">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                      <Button fx:id="deleteModel" mnemonicParsing="false" onAction="#deleteModel" prefHeight="31.0" prefWidth="126.0" text="Delete model">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                                <ListView fx:id="modelsListView" maxWidth="280.0" onMouseClicked="#displaySelectedModel" prefHeight="131.0" prefWidth="280.0">
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </ListView>
+                                             </children>
+                                          </VBox>
+                                          <TextField fx:id="screen" editable="false" layoutX="2.0" layoutY="183.0" maxWidth="280.0" mouseTransparent="true" prefHeight="30.0" prefWidth="280.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TitledPane>
+                              <TitledPane animated="false" prefHeight="330.0" prefWidth="295.0" text="Cameras">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="287.0" prefWidth="293.0">
+                                       <children>
+                                          <VBox maxWidth="280.0" prefHeight="302.0" prefWidth="280.0">
+                                             <children>
+                                                <VBox fx:id="vBoxCameras">
+                                                   <children>
+                                                      <HBox prefHeight="44.0" prefWidth="295.0">
+                                                         <children>
+                                                            <Button fx:id="createCamera" mnemonicParsing="false" onAction="#createCamera" prefHeight="31.0" prefWidth="126.0" text="Add camera">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <HBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </HBox.margin>
+                                                            </Button>
+                                                            <Button fx:id="deleteCamera" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteCamera" prefHeight="31.0" prefWidth="126.0" text="Delete camera">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <HBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </HBox.margin>
+                                                            </Button>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox prefHeight="34.0" prefWidth="295.0">
+                                                         <children>
+                                                            <TextField fx:id="eyeX" maxWidth="80.0" minWidth="80.0" prefHeight="26.0" prefWidth="80.0" promptText="x">
+                                                               <HBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </HBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="eyeY" layoutX="10.0" layoutY="10.0" maxWidth="80.0" minWidth="80.0" prefHeight="26.0" prefWidth="80.0" promptText="y">
+                                                               <HBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </HBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="eyeZ" layoutX="90.0" layoutY="10.0" maxWidth="80.0" minWidth="80.0" prefHeight="26.0" prefWidth="80.0" promptText="z">
+                                                               <HBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </HBox.margin>
+                                                            </TextField>
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                                <ListView fx:id="listCameras" maxWidth="280.0" onMouseClicked="#displaySelectedCamera" prefHeight="129.0" prefWidth="280.0">
+                                                   <VBox.margin>
+                                                      <Insets left="1.0" />
+                                                   </VBox.margin>
+                                                </ListView>
+                                                <TextField fx:id="screenCamera" editable="false" maxWidth="280.0" mouseTransparent="true" prefHeight="30.0" prefWidth="280.0">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </TextField>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TitledPane>
+                              <TitledPane animated="false" prefHeight="297.0" prefWidth="295.0" text="Texture">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="253.0" prefWidth="295.0">
+                                       <children>
+                                          <VBox layoutX="-1.0" layoutY="-3.0" maxWidth="280.0" prefHeight="272.0" prefWidth="280.0">
+                                             <children>
+                                                <HBox prefHeight="43.0" prefWidth="294.0">
+                                                   <children>
+                                                      <Button fx:id="addTexture" mnemonicParsing="false" onAction="#addTexture" prefHeight="31.0" prefWidth="126.0" text="Add texture">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                                <ListView fx:id="listTextures" maxWidth="280.0" onMouseClicked="#displaySelectedTexture" prefHeight="144.0" prefWidth="267.0">
+                                                   <VBox.margin>
+                                                      <Insets left="1.0" />
+                                                   </VBox.margin>
+                                                </ListView>
+                                                <ColorPicker fx:id="modelColorPicker" onAction="#displaySelectedColor" prefHeight="28.0" prefWidth="307.0" />
+                                                <HBox prefHeight="34.0" prefWidth="292.0">
+                                                   <children>
+                                                      <TextField fx:id="screenTexture" editable="false" mouseTransparent="true" prefHeight="7.0" prefWidth="295.0">
+                                                         <HBox.margin>
+                                                            <Insets left="3.0" right="3.0" top="3.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TitledPane>
+                              <TitledPane animated="false" prefHeight="294.0" prefWidth="302.0" text="Light">
+                                 <content>
+                                    <AnchorPane maxWidth="295.0" minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="295.0">
+                                       <children>
+                                          <VBox maxWidth="280.0" prefHeight="376.0" prefWidth="280.0">
+                                             <children>
+                                                <HBox prefHeight="44.0" prefWidth="295.0">
+                                                   <children>
+                                                      <Button fx:id="createCamera1" mnemonicParsing="false" onAction="#createLight" prefHeight="31.0" prefWidth="126.0" text="Add light">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                      <Button fx:id="deleteCamera1" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteLight" prefHeight="31.0" prefWidth="126.0" text="Delete light">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="34.0" prefWidth="295.0">
+                                                   <children>
+                                                      <TextField fx:id="lightX" maxWidth="80.0" minWidth="80.0" prefHeight="26.0" prefWidth="80.0" promptText="x">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="lightY" layoutX="10.0" layoutY="10.0" maxWidth="80.0" minWidth="80.0" prefHeight="26.0" prefWidth="80.0" promptText="y">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="lightZ" layoutX="90.0" layoutY="10.0" maxWidth="80.0" minWidth="80.0" prefHeight="26.0" prefWidth="80.0" promptText="z">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                </HBox>
+                                                <ListView fx:id="lightningListView" onMouseClicked="#displaySelectedLight" prefHeight="102.0" prefWidth="302.0" />
+                                                <TextField fx:id="screenLight" editable="false" mouseTransparent="true" prefHeight="30.0" prefWidth="271.0">
+                                                   <VBox.margin>
+                                                      <Insets left="3.0" right="3.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TitledPane>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </right>
+            </BorderPane>
+         </children>
+      </StackPane>
+      <VBox fx:id="sidePanel" layoutX="-330.0" layoutY="40.0" maxWidth="332.0" prefHeight="900.0" prefWidth="332.0">
+         <children>
+            <ScrollPane maxWidth="340.0" prefHeight="950.0" prefWidth="332.0">
+              <content>
+                <AnchorPane maxWidth="333.0" minHeight="0.0" minWidth="0.0" prefHeight="853.0" prefWidth="333.0">
+                     <children>
+                        <VBox prefHeight="910.0" prefWidth="326.0">
+                           <children>
+                              <TitledPane fx:id="editingTitledPane" animated="false" maxWidth="326.0" prefHeight="415.0" prefWidth="326.0" text="Vertices">
+                                <content>
+                                  <AnchorPane maxWidth="319.0" minHeight="0.0" minWidth="0.0" prefHeight="389.0" prefWidth="319.0">
+                                       <children>
+                                          <VBox layoutX="-3.0" maxWidth="304.0" prefHeight="342.0" prefWidth="304.0">
+                                             <children>
+                                                <ListView fx:id="vertexListView" maxWidth="304.0" prefHeight="318.0" prefWidth="304.0">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </ListView>
+                                                <HBox>
+                                                   <children>
+                                                      <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDeleteVertices" prefHeight="40.0" prefWidth="150.0" text="Delete vertices" />
+                                                      <ToggleButton fx:id="toggleVertices" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Show vertices" />
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets left="3.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </TitledPane>
+                              <TitledPane prefHeight="550.0" prefWidth="319.0" text="Transform">
+                                 <content>
+                                    <VBox prefHeight="454.0" prefWidth="319.0">
+                                       <children>
+                                          <VBox prefHeight="478.0" prefWidth="295.0">
+                                             <children>
+                                                <Pane prefHeight="483.0" prefWidth="295.0">
+                                                   <children>
+                                                      <HBox layoutX="13.0" layoutY="-14.0" prefHeight="96.0" prefWidth="240.0">
+                                                         <children>
+                                                            <VBox prefHeight="114.0" prefWidth="103.0">
+                                                               <children>
+                                                                  <HBox prefHeight="30.0" prefWidth="104.0">
+                                                                     <children>
+                                                                        <Label text="Translation">
+                                                                           <font>
+                                                                              <Font size="14.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                           </HBox.margin>
+                                                                        </Label>
+                                                                        <Label text="X" textFill="#fffcf2">
+                                                                           <font>
+                                                                              <Font size="14.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                           </HBox.margin>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label text="Y" textFill="#fffcf2">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                     <VBox.margin>
+                                                                        <Insets left="82.0" top="5.0" />
+                                                                     </VBox.margin>
+                                                                  </Label>
+                                                                  <Label text="Z" textFill="#fffcf2">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                     <VBox.margin>
+                                                                        <Insets left="82.0" top="8.0" />
+                                                                     </VBox.margin>
+                                                                  </Label>
+                                                               </children>
+                                                            </VBox>
+                                                            <VBox prefHeight="100.0" prefWidth="129.0">
+                                                               <children>
+                                                                  <TextField prefHeight="26.0" prefWidth="96.0" promptText="5" fx:id="xTransform">
+                                                                     <padding>
+                                                                        <Insets bottom="3.0" left="7.0" top="3.0" />
+                                                                     </padding>
+                                                                     <VBox.margin>
+                                                                        <Insets top="3.0" />
+                                                                     </VBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="yTransform" prefHeight="26.0" prefWidth="96.0" promptText="5">
+                                                                     <padding>
+                                                                        <Insets bottom="3.0" left="7.0" top="3.0" />
+                                                                     </padding>
+                                                                     <VBox.margin>
+                                                                        <Insets top="3.0" />
+                                                                     </VBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="zTransform" prefHeight="26.0" prefWidth="96.0" promptText="5">
+                                                                     <padding>
+                                                                        <Insets bottom="3.0" left="7.0" top="3.0" />
+                                                                     </padding>
+                                                                     <VBox.margin>
+                                                                        <Insets top="3.0" />
+                                                                     </VBox.margin>
+                                                                  </TextField>
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox layoutX="13.0" layoutY="116.0" prefHeight="95.0" prefWidth="240.0">
+                                                         <children>
+                                                            <VBox prefHeight="114.0" prefWidth="103.0">
+                                                               <children>
+                                                                  <HBox prefHeight="30.0" prefWidth="104.0">
+                                                                     <children>
+                                                                        <Label text="Rotation    " textFill="#fffcf2">
+                                                                           <font>
+                                                                              <Font size="14.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                           </HBox.margin>
+                                                                        </Label>
+                                                                        <Label text="X" textFill="#fffcf2">
+                                                                           <font>
+                                                                              <Font size="14.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                           </HBox.margin>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label text="Y" textFill="#fffcf2">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                     <VBox.margin>
+                                                                        <Insets left="82.0" top="5.0" />
+                                                                     </VBox.margin>
+                                                                  </Label>
+                                                                  <Label text="Z" textFill="#fffcf2">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                     <VBox.margin>
+                                                                        <Insets left="82.0" top="8.0" />
+                                                                     </VBox.margin>
+                                                                  </Label>
+                                                               </children>
+                                                            </VBox>
+                                                            <VBox prefHeight="100.0" prefWidth="129.0">
+                                                               <children>
+                                                                  <TextField prefHeight="26.0" prefWidth="96.0" promptText="45" fx:id="xRotate">
+                                                                     <padding>
+                                                                        <Insets bottom="3.0" left="7.0" top="3.0" />
+                                                                     </padding>
+                                                                     <VBox.margin>
+                                                                        <Insets top="3.0" />
+                                                                     </VBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="yRotate" prefHeight="26.0" prefWidth="96.0" promptText="30">
+                                                                     <padding>
+                                                                        <Insets bottom="3.0" left="7.0" top="3.0" />
+                                                                     </padding>
+                                                                     <VBox.margin>
+                                                                        <Insets top="3.0" />
+                                                                     </VBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="zRotate" prefHeight="26.0" prefWidth="96.0" promptText="90">
+                                                                     <padding>
+                                                                        <Insets bottom="3.0" left="7.0" top="3.0" />
+                                                                     </padding>
+                                                                     <VBox.margin>
+                                                                        <Insets top="3.0" />
+                                                                     </VBox.margin>
+                                                                  </TextField>
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox layoutX="13.0" layoutY="245.0" prefHeight="96.0" prefWidth="240.0">
+                                                         <children>
+                                                            <VBox prefHeight="114.0" prefWidth="103.0">
+                                                               <children>
+                                                                  <HBox prefHeight="30.0" prefWidth="104.0">
+                                                                     <children>
+                                                                        <Label text="Scale         " textFill="#fffcf2">
+                                                                           <font>
+                                                                              <Font size="14.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                           </HBox.margin>
+                                                                        </Label>
+                                                                        <Label text="X" textFill="#fffcf2">
+                                                                           <font>
+                                                                              <Font size="14.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                           </HBox.margin>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label text="Y" textFill="#fffcf2">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                     <VBox.margin>
+                                                                        <Insets left="82.0" top="5.0" />
+                                                                     </VBox.margin>
+                                                                  </Label>
+                                                                  <Label text="Z" textFill="#fffcf2">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                     <VBox.margin>
+                                                                        <Insets left="82.0" top="8.0" />
+                                                                     </VBox.margin>
+                                                                  </Label>
+                                                               </children>
+                                                            </VBox>
+                                                            <VBox prefHeight="100.0" prefWidth="129.0">
+                                                               <children>
+                                                                  <TextField prefHeight="26.0" prefWidth="96.0" promptText="1.18" fx:id="xScale">
+                                                                     <padding>
+                                                                        <Insets bottom="3.0" left="7.0" top="3.0" />
+                                                                     </padding>
+                                                                     <VBox.margin>
+                                                                        <Insets top="3.0" />
+                                                                     </VBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="yScale" prefHeight="26.0" prefWidth="96.0" promptText="1.14">
+                                                                     <padding>
+                                                                        <Insets bottom="3.0" left="7.0" top="3.0" />
+                                                                     </padding>
+                                                                     <VBox.margin>
+                                                                        <Insets top="3.0" />
+                                                                     </VBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="zScale" prefHeight="26.0" prefWidth="96.0" promptText="2.5">
+                                                                     <padding>
+                                                                        <Insets bottom="3.0" left="7.0" top="3.0" />
+                                                                     </padding>
+                                                                     <VBox.margin>
+                                                                        <Insets top="3.0" />
+                                                                     </VBox.margin>
+                                                                  </TextField>
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <Button layoutX="37.0" layoutY="82.0" mnemonicParsing="false" onAction="#applyTranslation" prefHeight="34.0" prefWidth="210.0" text="Apply translation" />
+                                                      <Button layoutX="37.0" layoutY="211.0" mnemonicParsing="false" onAction="#applyRotate" prefHeight="34.0" prefWidth="210.0" text="Apply rotate" />
+                                                      <Button layoutX="37.0" layoutY="341.0" mnemonicParsing="false" onAction="#applyScale" prefHeight="34.0" prefWidth="210.0" text="Apply scale" />
+                                                   </children>
+                                                </Pane>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TitledPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

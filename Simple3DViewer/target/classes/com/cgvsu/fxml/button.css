@@ -1,0 +1,44 @@
+.button {
+  -fx-background-color: #403D39;
+  -fx-text-fill: white;
+  -fx-font-size: 14px;
+  -fx-border-color: #fffcf2;
+  -fx-border-width: 0.5px;
+}
+.button:hover {
+      -fx-background-color:#302e2b;
+}
+
+.toggle-button {
+    -fx-border-color: #fffcf2;
+    -fx-border-width: 0.5px;
+    -fx-text-fill: white;
+    -fx-background-color: #403D39;
+    -fx-font-size: 14px;
+}
+
+.toggle-button:selected {
+    -fx-border-width: 0.5px;
+    -fx-border-color: #eb5e28;
+    -fx-text-fill: white;
+    -fx-background-color: #eb5e28;
+}
+
+.toggle-button:hover {
+    -fx-border-width: 0.5px;
+    -fx-border-color: #fffcf2;
+    -fx-background-color: #302e2b;
+    -fx-text-fill: white;
+}
+
+.toggle-button:pressed {
+    -fx-border-width: 0.5px;
+    -fx-background-color: #eb5e28;
+    -fx-text-fill: white;
+}
+
+.toggle-button:selected:hover {
+    -fx-border-width: 0.5px;
+    -fx-background-color: #eb5e28;
+    -fx-text-fill: white;
+}
