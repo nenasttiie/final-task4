@@ -161,11 +161,7 @@ public class GuiController {
 
             loadModelFromFile(file);
             Model model = SceneTools.addModel(file);
-//            if (model != null) {
-//                model.setFileName(modelName);
-//            }
 
-            //models.add(model);
             SceneTools.selectedModel = model;
 
             modelsListView.getItems().add(model);
@@ -197,8 +193,6 @@ public class GuiController {
     @FXML
     private void displaySelectedCamera(MouseEvent event) {
         selectedCamera = listCameras.getSelectionModel().getSelectedItem();
-//        isWindow1 = box1.isSelected();
-//        isWindow2 = box2.isSelected();
         System.out.println(selectedCamera.toString());
         if (selectedCamera == null) {
             screenCamera.setText("Noting Selected");
